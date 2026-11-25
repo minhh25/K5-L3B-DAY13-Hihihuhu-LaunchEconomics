@@ -1,6 +1,6 @@
 # Hồ sơ launch v0 — LogiX-VN — Gate 2a
 
-**Hihihuhu · L3B** · Dữ liệu giả lập, 1.200 yêu cầu / 1.624 lần chạy. Đây là đề xuất pilot; **chưa duyệt chéo**. Các số có nhãn simulated sử dụng phút lao động giả lập.
+**Hihihuhu · L3B** · Dữ liệu giả lập, 1.200 yêu cầu / 1.624 lần chạy. Đây là đề xuất pilot; **chưa được nhóm khác duyệt**. Các số có nhãn simulated sử dụng phút lao động giả lập.
 
 | Mục | Con số chính và bằng chứng | Trạng thái | Người phụ trách |
 | --- | --- | --- | --- |

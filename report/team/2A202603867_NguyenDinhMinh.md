@@ -26,7 +26,7 @@
 - B3 xác định giới hạn **2 lần chạy** có tổng chi phí thấp nhất **6.901.220,23 đ**, còn **1 lần chạy** có CPS thấp nhất **4.110,99 đ** nhưng chuyển thêm **85** yêu cầu sang nhân viên (simulated cho các chi phí).
 - B4 đếm mỗi yêu cầu có run `ok` một lần: **948** lượt xem lại, **48** ca làm lại, **900** việc thành công. CPS là **11.742,79 đ** với 9 phút làm lại/ca và **12.414,79 đ** với 15,3 phút/ca (simulated).
 - Rà soát bản tích hợp A–E; hoàn thiện báo cáo và làm rõ kế hoạch pilot về cỡ mẫu hiệu dụng, thời gian theo dõi 7 ngày, luật dừng và trạng thái chưa duyệt chéo.
-- Hoàn thiện CP4–CP5 theo slide bổ sung: chênh mở lại +2 điểm chỉ từ bước 10 người, xử lý hoàn trùng/báo hoàn sai ở mọi bước; ngưỡng 8.000 đ dùng CPS biến đổi. Bổ sung code tính số mẫu thô, ngày thu mẫu và chi phí cố định khi mở 4/10/20 người; đồng bộ 13 event, 4 rủi ro và hồ sơ launch. Phần chấm điểm, duyệt và hỏi–đáp hội đồng tiếp tục ghi chưa thực hiện.
+- Hoàn thiện CP4–CP5 theo slide bổ sung: chênh mở lại +2 điểm chỉ từ bước 10 người, xử lý hoàn trùng/báo hoàn sai ở mọi bước; ngưỡng 8.000 đ dùng CPS biến đổi. Bổ sung code tính số mẫu thô, ngày thu mẫu và chi phí cố định khi mở 4/10/20 người; đồng bộ 13 event, 4 rủi ro và hồ sơ launch. Phản hồi bằng văn bản của A90 được cập nhật và đánh giá riêng trong phiếu chấm; kết quả nhóm khác chấm Hihihuhu chưa được cung cấp.
 
 ## 4. Bằng chứng
 
@@ -37,7 +37,7 @@
 | Code B1–B4 | Commit `43891a3`, các hàm `phan_tich_do_nhay`, `in_phan_b` |
 | Kết quả và bàn giao | [bang_chi_phi.md](bang_chi_phi.md); Hải hoàn thiện bảng và code D1/E1 ở `9f0ccd3`, `a8bebf9` |
 | Tích hợp hồ sơ | [group_report.md](group_report.md), [ho_so_launch_v0.md](ho_so_launch_v0.md), [pilot_plan.yaml](pilot_plan.yaml) và phần đóng góp thực tế trong `TEAM.md` |
-| Hoàn thiện CP4–CP5 | Hàm `phan_tich_co_mau`, `kinh_te_rollout`; mục đo luật dừng và rủi ro tại [chi_so.md](chi_so.md); phiếu chấm giữ trạng thái chưa duyệt |
+| Hoàn thiện CP4–CP5 | Hàm `phan_tich_co_mau`, `kinh_te_rollout`; mục đo luật dừng và rủi ro tại [chi_so.md](chi_so.md); phiếu chấm lưu phản hồi bằng văn bản của A90 và nhận xét sau phản biện |
 
 ## 5. Công cụ và cách kiểm tra
 
@@ -51,4 +51,4 @@
 
 Hoàn thành phần code A–B và bàn giao số liệu để các thành viên tiếp tục C–E. Bài học chính là phải tính cả thời gian con người và phần việc chuyển nhân viên khi đánh giá hiệu quả kinh tế; việc giảm CPS riêng của agent chưa bảo đảm giảm chi phí công ty.
 
-Đề xuất hiện tại là **Go có điều kiện** cho pilot nội địa và hàng nặng. Số phút vẫn là simulated; mức đồng thuận gắn nhãn ban đầu **60%** và power khoảng **0,64** nếu hiệu ứng thật chỉ +5 điểm là các hạn chế cần nêu rõ. Nhóm **chưa duyệt chéo Gate 2a**, vì vậy báo cáo không ghi điểm hoặc kết quả bảo vệ chưa diễn ra.
+Đề xuất hiện tại là **Go có điều kiện** cho pilot nội địa và hàng nặng. Số phút vẫn là simulated; mức đồng thuận gắn nhãn ban đầu **60%** và power khoảng **0,64** nếu hiệu ứng thật chỉ +5 điểm là các hạn chế cần nêu rõ. Đã đọc hồ sơ, chạy kiểm tra code A90 tại commit **a7da2b4** và tổng hợp phiếu đề xuất **25/30**, **Go có điều kiện**. Đã nhận và đánh giá phản hồi bằng văn bản của A90: giải thích phù hợp, chờ xác minh commit đồng bộ để đề xuất nâng C8 lên 10/10. Nhóm mình **chưa có kết quả điểm nhận về từ nhóm khác**, nên không ghi điểm nhận về hoặc kết quả bảo vệ chưa diễn ra.

@@ -30,7 +30,7 @@ Bốn vai của lab:
 
 ## Phân công theo phase
 
-Giờ dưới đây theo lịch mẫu trong [CHECKPOINTS.md](CHECKPOINTS.md); nếu coach đổi giờ thì giữ nguyên thứ tự. Bảng này lưu kế hoạch phân công; đóng góp thực tế và bằng chứng được tổng hợp ở các mục cá nhân bên dưới. Nhóm xác nhận chưa duyệt chéo Gate 2a.
+Giờ dưới đây theo lịch mẫu trong [CHECKPOINTS.md](CHECKPOINTS.md); nếu coach đổi giờ thì giữ nguyên thứ tự. Bảng này lưu kế hoạch phân công; đóng góp thực tế và bằng chứng được tổng hợp ở các mục cá nhân bên dưới. Đã chấm hồ sơ A90 và nhận phản hồi bằng văn bản; chờ commit đồng bộ để chốt lại C8. Chưa có kết quả nhóm khác chấm Hihihuhu.
 
 | Phase / mốc | Minh | Hải | Bảo | Hùng | Đầu ra / điều kiện bàn giao |
 | --- | --- | --- | --- | --- | --- |
@@ -75,7 +75,8 @@ Mỗi người copy mẫu `report/team/MSSV_HoTen.md` thành file cá nhân đú
 
 - Đã hoàn thiện các hàm A1, mô hình chi phí A2–A4 và code B1–B4; chạy kiểm tra với dữ liệu lab và bộ nhỏ tính tay, bàn giao cho Hải.
 - Đã rà soát bản tích hợp A–E, bổ sung báo cáo cá nhân, tổng hợp báo cáo nhóm và đóng góp, hoàn thiện lịch/cỡ mẫu/luật dừng pilot, đối chiếu hồ sơ với `SUBMISSION.md`. Chưa trình bày Gate 2a vì nhóm chưa duyệt chéo.
-- Đã hoàn thiện CP4–CP5 theo slide bổ sung: luật dừng theo bước 4/10/20 người, CPS biến đổi tách cố định; bổ sung ngoại suy thời gian thu mẫu, bảng kinh tế rollout, 13 event, 4 rủi ro và đồng bộ hồ sơ launch. Điểm và quyết định hội đồng vẫn chưa có.
+- Đã hoàn thiện CP4–CP5 theo slide bổ sung: luật dừng theo bước 4/10/20 người, CPS biến đổi tách cố định; bổ sung ngoại suy thời gian thu mẫu, bảng kinh tế rollout, 13 event, 4 rủi ro và đồng bộ hồ sơ launch. Điểm và quyết định nhóm khác chấm Hihihuhu vẫn chưa có.
+- Đã kiểm tra hồ sơ/code A90 tại commit `a7da2b4`, tổng hợp phiếu đề xuất 25/30 (C6: 10, C7: 10, C8: 5), Go có điều kiện; tiếp nhận câu trả lời bằng văn bản do Minh bổ sung, đánh giá phần giải thích phù hợp và ghi rõ chờ commit đồng bộ trước khi nâng C8.
 
 ### Bằng chứng
 
@@ -91,7 +92,7 @@ Mỗi người copy mẫu `report/team/MSSV_HoTen.md` thành file cá nhân đú
 ### Đóng góp cụ thể
 
 - Đã hoàn thiện bảng chi phí A–B; viết `co_mau`, `phan_tich_co_mau`, `in_phan_d`, `tinh_chi_so_e`, `in_phan_e`; bàn giao kết quả D1/E1 cho Bảo.
-- Báo cáo cá nhân ghi nhận đã chạy code trên nhánh `haindv`; lần chạy lại bản hoàn thiện cuối trên máy thứ hai còn cần xác nhận.
+- Báo cáo cá nhân tại commit `d4ec91e` xác nhận đã chạy bản main `359e5c6` trên máy thứ hai, A1 đạt, đủ bảng A–B–D1–E1–E2 và YAML đọc được.
 
 ### Bằng chứng
 
@@ -127,4 +128,4 @@ Mỗi người copy mẫu `report/team/MSSV_HoTen.md` thành file cá nhân đú
 
 ### Bằng chứng
 
-- Commit `77bc5b9` (khung hồ sơ), `e10274c` (số A–B), `889ff11` (nhãn gốc), `e80cd63` (launch đủ 7 mục); báo cáo cá nhân và `nhan_doc_lap_hung.md`. Phiếu chấm đang ghi đúng trạng thái chưa duyệt, chưa có điểm hay phản biện thực tế.
+- Commit `77bc5b9` (khung hồ sơ), `e10274c` (số A–B), `889ff11` (nhãn gốc), `e80cd63` (launch đủ 7 mục); báo cáo cá nhân và `nhan_doc_lap_hung.md`. Phiếu chấm đã có phản hồi bằng văn bản của A90, tạm giữ 25/30 cho phiên bản đã kiểm tra và chờ commit đồng bộ; kết quả nhóm khác chấm Hihihuhu chưa được cung cấp.

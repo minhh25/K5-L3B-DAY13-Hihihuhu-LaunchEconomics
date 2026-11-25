@@ -26,7 +26,8 @@
 - Ba yếu tố tăng chi phí mạnh nhất: làm lại **+51,77%**, xem lại **+40,70%**, lương **+23,12%** (simulated). Giới hạn **2 lần chạy** cho tổng hệ thống thấp nhất **6.901.220 đ** (simulated).
 - Chỉ số chạy thử: chính **82,83% (994/1.200)**, bỏ qua gợi ý **27,12% (48/177)**, mở lại **4,25% (51/1.200)**. Chưa có đối chứng để kết luận tác động.
 - Đề xuất: **Go có điều kiện** cho nội địa + hàng nặng; phải sửa lỗi hoàn trùng/sổ cái, bật event, đo phút thực tế và chấp nhận đánh đổi cỡ mẫu trước khi chạy.
-- **Chưa duyệt chéo Gate 2a** theo xác nhận của nhóm; [phiếu chấm](phieu_cham.md) chưa có điểm, quyết định hay hỏi–đáp. Đây là đề xuất của nhóm, chưa phải quyết định hội đồng.
+- Đã kiểm tra hồ sơ/code **A90** tại **a7da2b4** và nhận phản hồi bằng văn bản. Câu trả lời giải quyết mốc theo dõi, năng lực tải và nguồn luật dừng; đang chờ commit đồng bộ từ A90 sau khi kiểm tra lại nhánh main. [Phiếu chấm](phieu_cham.md) tạm giữ **25/30**, **Go có điều kiện**; xem xét nâng lên 30/30 sau khi xác minh bản sửa.
+- **Chưa có phiếu nhóm khác chấm Hihihuhu**; không dùng 25/30 chấm A90 làm điểm nhóm mình nhận được. Đề xuất launch của Hihihuhu chưa phải phê duyệt của hội đồng.
 
 ## 5. Khó khăn và cách xử lý
 
@@ -41,7 +42,7 @@ Minh: code A–B, kiểm tra tích hợp, tổng hợp báo cáo. Hải: bảng 
 
 ## 7. Hạn chế và hướng cải thiện
 
-Dữ liệu và phút lao động là giả lập; cần đo thật trước khi chốt hiệu quả kinh tế. Pilot phải đủ mẫu ở 20 cụm mỗi nhánh và đủ thời gian theo dõi. Bản tích hợp đã chạy trên môi trường của Minh; lần chạy bản cuối trên máy thứ hai cần Hải xác nhận. Mỗi thành viên tự nộp link repo trên LMS trước **23h59 GMT+7 ngày lab**; nhóm chưa có bằng chứng hoàn tất bước này.
+Dữ liệu và phút lao động là giả lập; cần đo thật trước khi chốt hiệu quả kinh tế. Pilot phải đủ mẫu ở 20 cụm mỗi nhánh và đủ thời gian theo dõi. Hải đã xác nhận chạy bản main `359e5c6` trên máy thứ hai, đủ bảng A–B–D1–E1–E2 và YAML hợp lệ, trong báo cáo cá nhân cập nhật ở commit `d4ec91e`. Mỗi thành viên tự nộp link repo trên LMS trước **23h59 GMT+7 ngày lab**; nhóm chưa có bằng chứng hoàn tất bước này.
 
 ## 8. Tài liệu tham khảo
 

@@ -8,7 +8,7 @@
 
 ## 2. Mục tiêu và cách tiếp cận
 
-Đánh giá trợ lý hoàn phí LogiX-VN từ mẫu giả lập **1.200 yêu cầu / 1.624 lần chạy** và lập hồ sơ xin duyệt pilot Gate 2a. Minh viết code A–B; Hải kiểm số, lập bảng rồi tiếp quản code D1/E1; Bảo và Hùng gắn nhãn lỗi, hoàn thiện pilot, chỉ số và hồ sơ. Nhóm bàn giao qua commit/PR, mỗi thời điểm một người giữ code chính.
+Đánh giá trợ lý hoàn phí LogiX-VN từ mẫu giả lập **1.200 yêu cầu / 1.624 lần chạy** và lập hồ sơ xin duyệt pilot Gate 2a. Minh viết code A–B; Hải kiểm số, lập bảng rồi tiếp quản code D1/E1; Bảo và Hùng gắn nhãn lỗi độc lập; Bảo hoàn thiện pilot, chỉ số và event; Hùng hoàn thiện hồ sơ launch. Nhóm bàn giao qua commit/PR, mỗi thời điểm một người giữ code chính.
 
 ## 3. Giải pháp
 

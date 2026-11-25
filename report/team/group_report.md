@@ -26,7 +26,7 @@
 - Ba yếu tố tăng chi phí mạnh nhất: làm lại **+51,77%**, xem lại **+40,70%**, lương **+23,12%** (simulated). Giới hạn **2 lần chạy** cho tổng hệ thống thấp nhất **6.901.220 đ** (simulated).
 - Chỉ số chạy thử: chính **82,83% (994/1.200)**, bỏ qua gợi ý **27,12% (48/177)**, mở lại **4,25% (51/1.200)**. Chưa có đối chứng để kết luận tác động.
 - Đề xuất: **Go có điều kiện** cho nội địa + hàng nặng; phải sửa lỗi hoàn trùng/sổ cái, bật event, đo phút thực tế và chấp nhận đánh đổi cỡ mẫu trước khi chạy.
-- Đã đọc hồ sơ và chạy kiểm tra code nhóm **A90** tại commit **a7da2b4**; [phiếu chấm](phieu_cham.md) đề xuất **25/30**, **Go có điều kiện**, cần làm rõ mốc theo dõi và đồng bộ luật dừng. Chưa hỏi–đáp trực tiếp nên điểm đang là đề xuất.
+- Đã kiểm tra hồ sơ/code **A90** tại **a7da2b4** và nhận phản hồi bằng văn bản. Câu trả lời giải quyết mốc theo dõi, năng lực tải và nguồn luật dừng; đang chờ commit đồng bộ từ A90 sau khi kiểm tra lại nhánh main. [Phiếu chấm](phieu_cham.md) tạm giữ **25/30**, **Go có điều kiện**; xem xét nâng lên 30/30 sau khi xác minh bản sửa.
 - **Chưa có phiếu nhóm khác chấm Hihihuhu**; không dùng 25/30 chấm A90 làm điểm nhóm mình nhận được. Đề xuất launch của Hihihuhu chưa phải phê duyệt của hội đồng.
 
 ## 5. Khó khăn và cách xử lý

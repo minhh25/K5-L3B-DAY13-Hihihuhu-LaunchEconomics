@@ -5,7 +5,7 @@
 - Họ tên: Vũ Tiến Hùng
 - MSSV: 2A202603882
 - Email: hungvu.education@gmail.com
-- Vai trong nhóm (người viết code, người kiểm số, người gắn nhãn 1, người gắn nhãn 2 kiêm giữ hồ sơ): Người gắn nhãn 2 kiêm giữ hồ sơ
+- Vai trò trong nhóm: Người gắn nhãn 2 kiêm giữ hồ sơ
 
 ## 2. Phần việc phụ trách
 
@@ -18,15 +18,13 @@
 - Đã làm: dựng khung `ho_so_launch_v0.md`, điền mục 1, 2, 3, 7 từ số A–B trong `bang_chi_phi.md`, ghi nhãn *simulated*.
 - Đã lưu đủ 20 nhãn độc lập trong `nhan_doc_lap_hung.md`; Bảo tổng hợp hai bộ nhãn với đồng thuận ban đầu 12/20 = 60%, giữ nguyên nhãn gốc.
 - Đã hoàn thiện hồ sơ launch đủ 7 mục và đề xuất Go có điều kiện từ kết quả A–E (commit `e80cd63`). Minh tiếp tục tổng hợp báo cáo nhóm và rà soát hồ sơ trong lượt hoàn thiện cuối.
-- Chưa ghi kết quả duyệt chéo vì nhóm xác nhận chưa thực hiện hoạt động này.
+- Phiếu chấm chéo nhóm A90 ([phieu_cham.md](phieu_cham.md), tạm 25/30) do Minh soạn và ghi trên `main`; phần này không phải do Hùng viết.
 
 ## 4. Bằng chứng
 
-Commit, file, bảng hoặc con số do bạn làm.
-
 - Nhánh `hungvt`: commit `77bc5b9` (khung hồ sơ), `e10274c` (điền mục 1, 2, 3, 7).
 - Bộ nhãn độc lập ban đầu: commit `889ff11`, [nhan_doc_lap_hung.md](nhan_doc_lap_hung.md), đối chiếu cột người gắn nhãn 2 trong [bang_loi.md](bang_loi.md).
-- Hồ sơ launch đủ 7 mục: commit `e80cd63`; [phieu_cham.md](phieu_cham.md) ghi trạng thái chưa duyệt chéo, chưa có kết quả hội đồng.
+- Hồ sơ launch đủ 7 mục: commit `e80cd63`; [phieu_cham.md](phieu_cham.md) ghi kết quả chấm nhóm A90 (tạm 25/30); chưa có phiếu nhóm khác chấm Hihihuhu và chưa có kết quả hội đồng.
 
 ## 5. Công cụ AI đã dùng
 
@@ -35,4 +33,4 @@ Commit, file, bảng hoặc con số do bạn làm.
 
 ## 6. Tự đánh giá
 
-Hoàn thành bộ nhãn và hồ sơ launch theo vai trò giữ hồ sơ, cung cấp bằng chứng ở các commit trên. Đồng thuận ban đầu 60% còn thấp, nên cần tiếp tục kiểm tra định nghĩa lỗi; không đổi nhãn gốc để nâng tỉ lệ. Hồ sơ nêu rõ chi phí simulated và đánh đổi power 0,64 ở hiệu ứng +5 điểm. Phần hội đồng và hỏi–đáp còn chờ duyệt chéo thực tế.
+Hoàn thành bộ nhãn và hồ sơ launch theo vai trò giữ hồ sơ, cung cấp bằng chứng ở các commit trên. Đồng thuận ban đầu 60% còn thấp, nên cần tiếp tục kiểm tra định nghĩa lỗi; không đổi nhãn gốc để nâng tỉ lệ. Hồ sơ nêu rõ chi phí simulated và đánh đổi power 0,64 ở hiệu ứng +5 điểm. Phần hội đồng và việc nhóm khác chấm Hihihuhu vẫn đang chờ.

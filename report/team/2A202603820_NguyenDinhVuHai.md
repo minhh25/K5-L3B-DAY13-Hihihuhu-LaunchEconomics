@@ -24,7 +24,8 @@
 - Nhánh làm việc: `haindv`
 - `report/team/bang_chi_phi.md`: hoàn thiện bảng A1–A4, B1–B4 (CPS gốc `4.472 đ` [simulated], top 3 yếu tố nhạy nhất: số ca làm lại `+51,77%`, tỉ lệ xem lại `+40,70%`, lương `+23,12%` [simulated]).
 - `src/lab13.py`: bổ sung phần D1 (`1.251` yc/nhóm, `3.103` yc/nhóm ở m=75, giới hạn `1.000` với 20 NV/nhóm và `300` với 6 depot/nhóm, `m ≥ 299` cho MDE 6 điểm với `DE = 6,96`, power `0,64` nếu hiệu ứng thật 5 điểm; tỉ lệ mở lại 7 ngày `4,25%` toàn mẫu / `3,97%` phạm vi) và phần E1 (`82,83%` chính, `27,12%` bỏ qua gợi ý, `4,25%` mở lại).
-- Commit `bb17b92` (bảng A), `9f0ccd3` (bảng A–B), `a8bebf9` (code D1/E1 và báo cáo). Rà soát tích hợp đã chạy trên môi trường của Minh; Hải cần xác nhận lần chạy bản hoàn thiện cuối trên máy thứ hai. Nhóm chưa duyệt chéo Gate 2a.
+- Commit `bb17b92` (bảng A), `9f0ccd3` (bảng A–B), `a8bebf9` (code D1/E1 và báo cáo).
+- Xác nhận trên máy thứ hai (bản `main` hợp nhất `359e5c6`): đã chạy `python lab13.py` trong `src/.venv` (đạt cả 3 phép thử A1 và in đủ bảng A, B, D1, E1, E2 không lỗi), kiểm tra `yaml.safe_load` trên `report/team/pilot_plan.yaml` (`YAML OK`), và kiểm tra không có từ cấm trong `report/team/`. Nhóm sẵn sàng duyệt chéo Gate 2a.
 
 ## 5. Công cụ AI đã dùng
 

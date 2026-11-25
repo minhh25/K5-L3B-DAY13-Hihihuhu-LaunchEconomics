@@ -1,30 +1,25 @@
 # Phiếu chấm hội đồng Gate 2a
 
-Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo bằng chứng trong hồ sơ, không theo cách trình bày: một đề xuất No-go có lý do bằng số được điểm cao hơn một đề xuất Go bỏ qua con số bất lợi.
+- Nhóm chấm: **Hihihuhu — L3B**.
+- Trạng thái: **Chưa duyệt chéo**, theo xác nhận của nhóm ngày 25/11/2026.
+- Nhóm được chấm / link hồ sơ: chưa được cung cấp.
+- Người giữ phiếu: Vũ Tiến Hùng; cả nhóm đánh giá khi nhận hồ sơ nhóm được phân công.
 
-- Nhóm chấm (hội đồng): Hihihuhu (L3B)
-- Nhóm được chấm: ...
+Nhóm số n chấm nhóm n + 1; nhóm cuối chấm nhóm 1. Mỗi tiêu chí chấm 0, 5 hoặc 10 điểm theo [RUBRIC.md](../../RUBRIC.md), tổng tối đa 30 điểm.
 
-| Tiêu chí | 0 điểm | 5 điểm | 10 điểm | Điểm | Lý do (có số) |
-| --- | --- | --- | --- | ---: | --- |
-| Đề xuất khớp bằng chứng | Mâu thuẫn với số của chính nhóm | Khớp nhưng bỏ qua một con số bất lợi | Khớp, nêu cả con số bất lợi và cách xử lý | ... | ... |
-| Số giả lập và phạm vi | Không nhãn; phạm vi "mọi yêu cầu" | Có nhãn hoặc có thu hẹp phạm vi | Nhãn ở mọi số giả lập; phạm vi thu hẹp có lý do bằng số | ... | ... |
-| Pilot ra được quyết định | Không đối chứng hoặc thiếu cỡ mẫu | Đủ cỡ mẫu, luật dừng chung chung | Tách được tác động, đủ mẫu, luật dừng có ngưỡng, thời hạn, người có quyền dừng | ... | ... |
-| **Tổng** | | | | **... / 30** | |
+| Tiêu chí | Cơ sở chấm | Điểm | Bằng chứng từ nhóm được chấm |
+| --- | --- | --- | --- |
+| Đề xuất khớp bằng chứng | Có số chính, nêu cả số bất lợi và cách xử lý | Chưa chấm | Chưa nhận hồ sơ để đối chiếu |
+| Số giả lập và phạm vi | Gắn nhãn simulated, thu hẹp phạm vi có lý do bằng số | Chưa chấm | Chưa nhận hồ sơ để đối chiếu |
+| Pilot ra được quyết định | Có đối chứng, đủ mẫu, luật dừng có ngưỡng/thời hạn/người có quyền | Chưa chấm | Chưa nhận hồ sơ để đối chiếu |
+| **Tổng** | **Tối đa 30 điểm** | **Chưa chấm** | Không quy đổi thiếu dữ liệu thành điểm 0 |
 
-**Quyết định của hội đồng:** Go · Go có điều kiện · No-go (giữ một)
+**Quyết định của hội đồng:** Chưa có; chỉ chọn Go / Go có điều kiện / No-go sau khi duyệt hồ sơ thực tế.
 
-**Lý do:** ...
+**Lý do:** Chưa duyệt chéo nên chưa có căn cứ kết luận.
 
-**Một câu hỏi cho đội trình:** ...
+**Câu hỏi dự kiến:** Nếu phải xem lại 100% trong pilot, chi phí cả hệ thống trên mỗi yêu cầu là bao nhiêu và ai có quyền dừng khi vượt ngưỡng đã chốt?
 
-**Câu trả lời của đội trình (ghi lại tại buổi):** ...
+**Câu trả lời của đội trình:** Chưa có; ghi nguyên ý trả lời tại buổi duyệt.
 
----
-
-Gợi ý khi đọc hồ sơ nhóm khác (ghi nháp, không phải phần nộp):
-
-- Đề xuất ở dòng cuối có mâu thuẫn với con số trong chính bảng 7 mục không? Có nêu con số bất lợi không?
-- Mọi số tính từ cột `_simulated` có nhãn simulated/Giả lập chưa? Phạm vi có bị viết là "mọi yêu cầu" không?
-- Pilot có nhóm đối chứng, cỡ mẫu, và luật dừng có ngưỡng, thời hạn, người có quyền dừng không?
-- Có chỗ nào viết như thể trợ lý đã được duyệt chạy chính thức ("production") không?
+Phiếu này ghi trạng thái chuẩn bị, chưa thay thế kết quả duyệt chéo bắt buộc. Khi duyệt, bổ sung tên/link nhóm được chấm, điểm từng tiêu chí kèm số và nguồn, tổng điểm, quyết định cùng phần hỏi–đáp thực tế.

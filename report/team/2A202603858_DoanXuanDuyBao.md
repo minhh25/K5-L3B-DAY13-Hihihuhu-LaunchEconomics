@@ -26,7 +26,7 @@
 ## 4. Bằng chứng
 
 - Nhánh cá nhân `baodxd` với các file đã cập nhật: `report/team/bang_loi.md`, `report/team/pilot_plan.yaml`, `report/team/chi_so.md`, `report/team/2A202603858_DoanXuanDuyBao.md`.
-- *(Sẽ bổ sung commit hash cuối cùng và ghi nhận duyệt chéo Gate 2a sau khi hoàn tất cả buổi)*
+- Commit `55cf960` (chuẩn bị), `1695151` (bảng lỗi), `3f7e238` (pilot/chỉ số), `b6df753` (bổ sung thuộc tính event). Chưa có bằng chứng duyệt chéo vì nhóm chưa thực hiện.
 
 ## 5. Công cụ AI đã dùng
 
@@ -35,4 +35,4 @@
 
 ## 6. Tự đánh giá
 
-- *(Cập nhật sau khi hoàn thành toàn bộ các phase và duyệt chéo Gate 2a)*
+- Hoàn thành C, D và E1–E2 theo các commit đã nêu; số trong pilot và chỉ số được bàn giao từ code của Hải. Hạn chế còn lại là đồng thuận nhãn ban đầu 60% và dữ liệu phút simulated; giữ nguyên nhãn gốc, bổ sung quy tắc và ưu tiên đo thực tế. Duyệt chéo chưa diễn ra nên chưa tự nhận hoàn thành phần phản biện/hội đồng.

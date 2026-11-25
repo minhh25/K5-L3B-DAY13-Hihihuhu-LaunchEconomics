@@ -6,8 +6,9 @@
 - Lớp: L3B
 - Repo nhóm: `K5-L3B-DAY13-Hihihuhu-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
 - URL repo: https://github.com/minhh25/K5-L3B-DAY13-Hihihuhu-LaunchEconomics
-- Nhánh nộp dự kiến: `main` (nhánh hiện tại).
-- Commit chốt: cập nhật sau khi hoàn tất bài và kiểm tra trên máy thứ hai.
+- Quyền truy cập: public, đã kiểm tra khi rà soát bài nộp.
+- Nhánh nộp: `main` sau khi merge PR; nhánh hoàn thiện hồ sơ: `minhnd`.
+- Phiên bản A–E đã tích hợp: `2b91cac`; các thay đổi hoàn thiện hồ sơ tiếp tục qua PR từ `minhnd`. Commit nộp là commit cuối trên `main` trước deadline, tra bằng `git log -1 --format=%H main`.
 
 ## Thành viên
 
@@ -29,7 +30,7 @@ Bốn vai của lab:
 
 ## Phân công theo phase
 
-Giờ dưới đây theo lịch mẫu trong [CHECKPOINTS.md](CHECKPOINTS.md); nếu coach đổi giờ thì giữ nguyên thứ tự. Đây là kế hoạch phân công, phần đóng góp và bằng chứng thực tế sẽ cập nhật sau khi làm.
+Giờ dưới đây theo lịch mẫu trong [CHECKPOINTS.md](CHECKPOINTS.md); nếu coach đổi giờ thì giữ nguyên thứ tự. Bảng này lưu kế hoạch phân công; đóng góp thực tế và bằng chứng được tổng hợp ở các mục cá nhân bên dưới. Nhóm xác nhận chưa duyệt chéo Gate 2a.
 
 | Phase / mốc | Minh | Hải | Bảo | Hùng | Đầu ra / điều kiện bàn giao |
 | --- | --- | --- | --- | --- | --- |
@@ -72,12 +73,13 @@ Mỗi người copy mẫu `report/team/MSSV_HoTen.md` thành file cá nhân đú
 
 ### Đóng góp cụ thể
 
-- Kế hoạch: hoàn thiện các hàm A1, mô hình chi phí A2–A4, các kịch bản B; kiểm D1 và đề xuất cuối.
-- Đóng góp thực tế: cập nhật sau khi thực hiện.
+- Đã hoàn thiện các hàm A1, mô hình chi phí A2–A4 và code B1–B4; chạy kiểm tra với dữ liệu lab và bộ nhỏ tính tay, bàn giao cho Hải.
+- Đã rà soát bản tích hợp A–E, bổ sung báo cáo cá nhân, tổng hợp báo cáo nhóm và đóng góp, hoàn thiện lịch/cỡ mẫu/luật dừng pilot, đối chiếu hồ sơ với `SUBMISSION.md`. Chưa trình bày Gate 2a vì nhóm chưa duyệt chéo.
+- Đã hoàn thiện CP4–CP5 theo slide bổ sung: luật dừng theo bước 4/10/20 người, CPS biến đổi tách cố định; bổ sung ngoại suy thời gian thu mẫu, bảng kinh tế rollout, 13 event, 4 rủi ro và đồng bộ hồ sơ launch. Điểm và quyết định hội đồng vẫn chưa có.
 
 ### Bằng chứng
 
-- Cần bổ sung: commit sửa A–B trong `src/lab13.py`, output ba phép thử và bảng chi phí, ghi nhận kiểm tra D1, commit tích hợp cuối.
+- Commit `99971af` (phân công), `6d98671` (A), `43891a3` (B); `src/lab13.py` chạy đủ A–B–D–E, A1 đạt. Báo cáo cá nhân ghi cách kiểm tra và các kết quả; phần hoàn thiện cuối thể hiện trong diff/PR nhánh `minhnd`.
 
 ## Nguyễn Đình Vũ Hải — 2A202603820
 
@@ -88,12 +90,12 @@ Mỗi người copy mẫu `report/team/MSSV_HoTen.md` thành file cá nhân đú
 
 ### Đóng góp cụ thể
 
-- Kế hoạch: đối chiếu ít nhất một phép tính tay, điền `bang_chi_phi.md`, tự chạy lại mô hình chi phí, tính 5 câu D1 và 3 chỉ số E.
-- Đóng góp thực tế: cập nhật sau khi thực hiện.
+- Đã hoàn thiện bảng chi phí A–B; viết `co_mau`, `phan_tich_co_mau`, `in_phan_d`, `tinh_chi_so_e`, `in_phan_e`; bàn giao kết quả D1/E1 cho Bảo.
+- Báo cáo cá nhân ghi nhận đã chạy code trên nhánh `haindv`; lần chạy lại bản hoàn thiện cuối trên máy thứ hai còn cần xác nhận.
 
 ### Bằng chứng
 
-- Cần bổ sung: phép tính tay, commit bảng chi phí và code D1/E, output cỡ mẫu/chỉ số, kết quả chạy code và đọc YAML trên máy thứ hai.
+- Commit `bb17b92` (bảng A), `9f0ccd3` (bảng A–B), `a8bebf9` (code D1/E1 và báo cáo). Các file `bang_chi_phi.md`, `src/lab13.py`, báo cáo cá nhân lưu số và cách đối chiếu.
 
 ## Đoàn Xuân Duy Bảo — 2A202603858
 
@@ -104,12 +106,12 @@ Mỗi người copy mẫu `report/team/MSSV_HoTen.md` thành file cá nhân đú
 
 ### Đóng góp cụ thể
 
-- Kế hoạch: gắn độc lập 20 ca; sau khi so nhãn tổng hợp 5 cách khắc phục; viết D2 và YAML từ số D1 đã kiểm; hoàn thiện `chi_so.md` từ kết quả Hải bàn giao và bảng B.
-- Đóng góp thực tế: cập nhật sau khi thực hiện.
+- Đã tổng hợp hai bộ nhãn, tính đồng thuận ban đầu 12/20 = 60%, viết lại định nghĩa và quy tắc cho 8 ca lệch, hoàn thiện 5 cách khắc phục.
+- Đã hoàn thiện pilot từ D1 của Hải và chỉ số/event/rủi ro từ A–B, E1; bước duyệt chéo còn chưa diễn ra.
 
 ### Bằng chứng
 
-- Cần bổ sung: bộ nhãn độc lập ban đầu, commit `bang_loi.md`, `pilot_plan.yaml`, `chi_so.md` và ghi nhận giải trình khi duyệt chéo.
+- Commit `55cf960`, `1695151` (bảng lỗi), `3f7e238` (pilot và chỉ số), `b6df753` (event); hai bộ nhãn gốc nằm trong `bang_loi.md`, nhãn Hùng đối chiếu tại `nhan_doc_lap_hung.md`.
 
 ## Vũ Tiến Hùng — 2A202603882
 
@@ -120,9 +122,9 @@ Mỗi người copy mẫu `report/team/MSSV_HoTen.md` thành file cá nhân đú
 
 ### Đóng góp cụ thể
 
-- Kế hoạch: điền hồ sơ dần theo A–E; gắn độc lập 20 ca; cùng Bảo so nhãn và ghi quy tắc; hoàn thiện hồ sơ 7 mục trước 17:00; ghi kết quả hội đồng thực tế và tổng hợp báo cáo.
-- Đóng góp thực tế: cập nhật sau khi thực hiện.
+- Đã dựng khung hồ sơ, báo cáo nhóm và phiếu chấm; lưu bộ nhãn độc lập 20 ca; điền hồ sơ launch đủ 7 mục và đề xuất Go có điều kiện từ số A–E.
+- Minh tổng hợp tiếp báo cáo nhóm, cập nhật trạng thái phiếu và rút gọn hồ sơ trong lượt hoàn thiện cuối; Hùng giữ vai trò ghi nhận duyệt chéo khi hoạt động diễn ra.
 
 ### Bằng chứng
 
-- Cần bổ sung: bộ nhãn độc lập ban đầu, lịch sử cập nhật `ho_so_launch_v0.md`, commit `phieu_cham.md`, `group_report.md` và phản biện thực tế của hội đồng.
+- Commit `77bc5b9` (khung hồ sơ), `e10274c` (số A–B), `889ff11` (nhãn gốc), `e80cd63` (launch đủ 7 mục); báo cáo cá nhân và `nhan_doc_lap_hung.md`. Phiếu chấm đang ghi đúng trạng thái chưa duyệt, chưa có điểm hay phản biện thực tế.

@@ -1,6 +1,6 @@
 """Lab 13 · Định giá agent và lập kế hoạch pilot (Gate 2a) — bài làm của nhóm (file nộp).
 Chạy trong thư mục src/: python3 lab13.py   (cần pandas; Nhiệm vụ D cần thêm statsmodels)
-Không cần khoá API. Phần A tính chi phí, phần B phân tích độ nhạy; phần D ở TODO CP4.
+Không cần khoá API. In kết quả A–B, cỡ mẫu D1 và ba chỉ số E1.
 Dữ liệu trong hai file CSV là giả lập.
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
@@ -18,6 +18,7 @@ LUONG_PHUT = 2000   # đồng cho 1 phút của nhân viên (đã gồm bảo hi
 BASELINE = 12000    # đồng cho 1 yêu cầu khi nhân viên tự làm (6 phút)
 CO_DINH_THANG = 40_000_000
 YEU_CAU_THANG = 45_000
+YEU_CAU_NGAY = 1_500
 
 
 # ---------- Nhiệm vụ A1 · Kinh tế của việc chạy lại ----------
@@ -323,11 +324,18 @@ def phan_tich_co_mau(reqs, p1=0.70, mde_5=0.05, mde_6=0.06,
     pham_vi = reqs[reqs['loai'].isin(['noi_dia', 'hang_nang'])]
     mo_lai_toan_mau = reqs['mo_lai_trong_7_ngay'].mean()
     mo_lai_pham_vi = pham_vi['mo_lai_trong_7_ngay'].mean()
+    yeu_cau_moi_nguoi_ngay = YEU_CAU_NGAY / (2 * c_nhan_vien)
+    ti_trong_pham_vi = len(pham_vi) / len(reqs)
 
     return dict(
         n_5=n_5, de_75=de_75, n_75=n_75, nv_moi_nhom=nv_moi_nhom,
         eff_max_nv=eff_max_nv, eff_max_depot=eff_max_depot,
         n_6=n_6, m_min_6=m_min_6, de_6=de_6, power_neu_5=power_neu_5,
+        n_raw_6=c_nhan_vien * m_min_6,
+        n_eff_6=c_nhan_vien * m_min_6 / de_6,
+        ngay_thu_mau_toan_bo=math.ceil(m_min_6 / yeu_cau_moi_nguoi_ngay),
+        ngay_thu_mau_pham_vi=math.ceil(
+            m_min_6 / (yeu_cau_moi_nguoi_ngay * ti_trong_pham_vi)),
         mo_lai_toan_mau=mo_lai_toan_mau,
         so_mo_lai_toan_mau=int(reqs['mo_lai_trong_7_ngay'].sum()),
         n_toan_mau=len(reqs),
@@ -352,6 +360,12 @@ def in_phan_d(kq):
           f'm ≥ {kq["m_min_6"]} yêu cầu/người (DE={kq["de_6"]:.2f})')
     print(f'   Lưu ý bất lợi: nếu tác động thật chỉ +5 điểm với n={kq["n_6"]}, '
           f'power còn {kq["power_neu_5"]:.2f}')
+    print(f'   Cần {kq["n_raw_6"]:,} yêu cầu thô/nhóm, tương đương '
+          f'{kq["n_eff_6"]:,.2f} quan sát hiệu dụng; chỉ thu ở bước 20 người.')
+    print(f'   Ước tính thu mẫu với 1.500 yêu cầu/ngày, chia đều cho 40 người: '
+          f'{kq["ngay_thu_mau_toan_bo"]} ngày nếu toàn bộ loại yêu cầu; '
+          f'{kq["ngay_thu_mau_pham_vi"]} ngày nếu chỉ noi_dia + hang_nang '
+          '(giả định cơ cấu mẫu giữ nguyên). Sau đó vẫn cần cửa sổ theo dõi 7 ngày.')
     print(f'Tỉ lệ mở lại trong 7 ngày hiện tại: '
           f'toàn mẫu {kq["mo_lai_toan_mau"]:.2%} '
           f'({kq["so_mo_lai_toan_mau"]}/{kq["n_toan_mau"]}); '
@@ -359,7 +373,26 @@ def in_phan_d(kq):
           f'({kq["so_mo_lai_pham_vi"]}/{kq["n_pham_vi"]})')
 
 
-# ---------- Nhiệm vụ E · Ba chỉ số tính thử từ dữ liệu ----------
+# ---------- Nhiệm vụ E · Chỉ số và rủi ro chi phí ở từng bước rollout ----------
+def kinh_te_rollout(runs, reqs):
+    """Ngoại suy theo 40 nhân viên, phân bổ đều việc và cơ cấu mẫu giữ nguyên.
+
+    Giả định cả 40 triệu đ/tháng được phân bổ cho bước pilot đang xét.
+    CPS biến đổi dùng cho luật dừng 8.000 đ; cố định được theo dõi riêng.
+    """
+    pham_vi = reqs[reqs['loai'].isin(['noi_dia', 'hang_nang'])]
+    kq = mo_hinh(runs, pham_vi)
+    bang = []
+    for so_nguoi in (4, 10, 20):
+        thanh_cong_thang = (YEU_CAU_THANG * so_nguoi / 40
+                            * kq['thanh_cong'] / len(reqs))
+        co_dinh_moi_viec = CO_DINH_THANG / thanh_cong_thang
+        bang.append(dict(so_nguoi=so_nguoi, thanh_cong_thang=thanh_cong_thang,
+                         cps_bien_doi=kq['cps'], co_dinh_moi_viec=co_dinh_moi_viec,
+                         cps_day_du=kq['cps'] + co_dinh_moi_viec))
+    return bang
+
+
 def tinh_chi_so_e(reqs):
     """Tính 3 chỉ số (chính, dùng, an toàn) trên 1.200 yêu cầu chạy thử."""
     chinh_mask = (reqs['dong_trong_24h'] == 1) & (reqs['mo_lai_trong_7_ngay'] == 0)
@@ -390,6 +423,19 @@ def in_phan_e(kq):
           f'{kq["an_toan"]:.2%} ({kq["an_toan_tu"]}/{kq["an_toan_mau"]})')
 
 
+def in_kinh_te_rollout(bang):
+    print('\nE2 · Cố định khi pilot còn ít người (chi phí simulated)')
+    print('Phạm vi noi_dia + hang_nang; ngoại suy đều việc, '
+          'cả 40 triệu đ/tháng được phân bổ cho pilot; chưa tính nhân viên làm thay.')
+    print(pd.DataFrame(bang).rename(columns={
+        'so_nguoi': 'Người dùng', 'thanh_cong_thang': 'Thành công/tháng',
+        'cps_bien_doi': 'CPS biến đổi (đ)', 'co_dinh_moi_viec': 'Cố định/việc (đ)',
+        'cps_day_du': 'CPS + cố định (đ)',
+    }).to_string(index=False, float_format=lambda so: f'{so:,.2f}'))
+    print('Ngưỡng dừng 8.000 đ chỉ dùng CPS biến đổi; '
+          'chi phí cố định dùng để đánh giá ngân sách/hợp đồng riêng.')
+
+
 if __name__ == '__main__':
     runs = pd.read_csv('logix_runs.csv')
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
@@ -398,3 +444,4 @@ if __name__ == '__main__':
     in_phan_b(phan_tich_do_nhay(runs, reqs))
     in_phan_d(phan_tich_co_mau(reqs))
     in_phan_e(tinh_chi_so_e(reqs))
+    in_kinh_te_rollout(kinh_te_rollout(runs, reqs))

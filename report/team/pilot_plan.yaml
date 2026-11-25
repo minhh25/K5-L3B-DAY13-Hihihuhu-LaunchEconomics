@@ -1,5 +1,5 @@
 # Lab 13 · Nhiệm vụ D · Kế hoạch pilot trợ lý hoàn phí LogiX-VN (Gate 2a)
-# Điền mọi chỗ có dấu hỏi. Khi nộp, ngoài các dòng chú thích không còn dấu hỏi nào.
+# Bản kế hoạch đề xuất; chưa phải phê duyệt của hội đồng Gate 2a.
 # Kiểm tra đọc được: python -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml'))"
 #
 # D1 · Cỡ mẫu (baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02)
@@ -13,44 +13,81 @@
 #   1. Đối chứng chạy cùng thời gian: Có, 20 nhân viên nhóm đối chứng làm việc cùng tuần, cùng depot với nhóm dùng trợ lý.
 #   2. Chia ngẫu nhiên hay do người chọn: Chia ngẫu nhiên bằng code với seed cố định ghi trước, phân tầng theo depot.
 #   3. Ảnh hưởng gián tiếp và cách giảm: Có rủi ro nhân viên cùng depot chia sẻ câu trả lời; giảm bằng phân quyền theo tài khoản nhân viên và log lượt mở trợ lý theo staff_id.
-#   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước: Có, chỉ số chính, ngưỡng dừng và ngày quyết định (2027-01-05) được chốt trước khi chạy pilot.
+#   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước: Đề xuất chốt chỉ số, ngưỡng và lịch trước pilot; ngày quyết định dự kiến 2027-01-20, sau khi đủ mẫu và đủ cửa sổ theo dõi 7 ngày.
 #   5. Ít nhất 20 cụm mỗi nhóm: Có, 20 nhân viên mỗi nhóm (40 nhân viên chia 20 + 20).
 #
-# Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện): Chọn chia theo nhân viên (20 + 20) và chấp nhận MDE = +6 điểm (859 mỗi nhóm, m >= 299 yêu cầu/người, DE = 6,96); nếu tác động thật chỉ +5 điểm với n = 859 thì power giảm còn 0,64.
+# Đánh đổi đề xuất để Giám đốc vận hành phê duyệt: chia theo nhân viên (20 + 20), MDE = +6 điểm (859 quan sát hiệu dụng mỗi nhóm, m >= 299 yêu cầu/người, DE = 6,96); nếu tác động thật chỉ +5 điểm với n = 859 thì power còn 0,64.
+# 859 là cỡ mẫu HIỆU DỤNG; số yêu cầu thô tối thiểu là 20 * 299 = 5.980 mỗi nhóm.
+# Chỉ tính mẫu chính ở bước 0.50, đủ 20 cụm mỗi nhóm; không cộng mẫu các bước 0.10/0.25.
+# Nếu cỡ cụm không bằng nhau, kiểm tra lại DE theo cỡ cụm thực tế; không chỉ dựa vào tổng 5.980.
+# Thu mẫu: 1.500 / 40 = 37,5 yêu cầu/người/ngày -> cần 8 ngày nếu nhận mọi loại.
+# Phạm vi pilot chiếm 982/1.200 -> khoảng 30,69 yêu cầu/người/ngày -> cần khoảng 10 ngày.
+# Đây là ngoại suy chia đều việc; phải kiểm tra số thực tế từng người, không suy ra đủ mẫu chỉ từ số ngày.
+# Theo dõi mở lại 7 ngày là cửa sổ riêng của từng yêu cầu, không thay cho thời gian thu mẫu.
 #
-# Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn: Toàn mẫu 4,25% (51/1.200), phạm vi noi_dia + hang_nang 3,97% (39/982); không đặt ngưỡng tuyệt đối 3% vì sẽ dừng ngay tuần đầu, nên chọn ngưỡng cao hơn đối chứng >= 2 điểm hoặc vượt trần tuyệt đối 6%, hoặc >= 1 ca hoàn trùng trong 3 ngày liên tiếp.
+# Tỉ lệ mở lại hiện tại: toàn mẫu 4,25% (51/1.200), phạm vi 3,97% (39/982).
+# D3 theo slide bổ sung: hoàn trùng/báo hoàn sai và trần mở lại 6% áp dụng mọi bước;
+# luật chênh đối chứng >= 2 điểm chỉ áp dụng từ bước 10 người, trên cohort đủ 7 ngày.
+# Ngưỡng 8.000 đ chỉ dùng CPS biến đổi (token + tool + xem lại + làm lại) / số việc thành công;
+# 40 triệu đ/tháng theo dõi riêng ở E2, không cộng vào chỉ số kích hoạt luật dừng này.
 
 pilot:
   owner: "Giám đốc vận hành LogiX-VN"
-  scope: "Chỉ noi_dia (2.696 đ = 0,22×, thành công 95,0%) và hang_nang (8.221 đ = 0,69×, thành công 74,1%) [simulated]; loại quoc_te (22.515 đ = 1,88×, thành công 27,3%) và doi_tac (10.215 đ = 0,85×, điều khoản riêng)"
+  scope: "Chỉ noi_dia (2.696 đ = 0,22×, simulated; thành công 95,0%) và hang_nang (8.221 đ = 0,69×, simulated; thành công 74,1%) tại 12 depot, 40 nhân viên; loại quoc_te (22.515 đ = 1,88×, simulated; thành công 27,3%) và doi_tac (10.215 đ = 0,85×, simulated; điều khoản riêng)"
   assignment:
     unit: "staff"
     control_share: 0.5
     randomized: true
-  rollout: [0.10, 0.25, 0.50]     # 4 -> 10 -> 20 nhân viên mỗi nhóm; mỗi bước 1 tuần; chỉ đo chỉ số chính từ bước 0.50
+    seed: 13                     # seed đề xuất, chốt trước phân nhóm
+    stratify_by: "depot"
+  rollout: [0.10, 0.25, 0.50]     # 4 -> 10 -> 20 người dùng trợ lý / tổng 40; đối chứng luôn 20 người
+  start_date: "2026-12-15"        # ngày đề xuất, phụ thuộc điều kiện tiền pilot
+  stage_days: [7, 7, 14]          # kéo dài bước cuối để đạt mẫu; chưa đủ mẫu thì chưa ra quyết định
+  rollout_gate: "Chỉ tăng bước khi Giám đốc vận hành xác nhận không có luật dừng đang vi phạm và đủ dữ liệu an toàn của bước hiện tại; 7/7/14 ngày là lịch tối thiểu đề xuất. Nếu phải giữ bước, dịch lịch đo chính, kết thúc thu mẫu và quyết định theo thực tế."
+  measurement:
+    start_date: "2026-12-29"
+    enrollment_end_date: "2027-01-11"
+    minimum_requests_per_staff: 299
+    minimum_raw_requests_per_arm: 5980
+    follow_up_days_after_close: 7
+    data_maturity_date: "2027-01-19"
+    decision_gate: "Đủ 20 cụm/nhóm, tối thiểu 299 yêu cầu đúng phạm vi mỗi nhân viên và n_eff >= 859; yêu cầu đóng đúng hạn phải được theo dõi đủ 7 ngày, yêu cầu không đóng trong 24 giờ được tính không đạt. Nếu chưa đủ mẫu hoặc theo dõi, kéo dài thu mẫu và lùi lịch quyết định tương ứng, chưa kết luận Go."
   primary_metric:
     name: dong_trong_24h_khong_mo_lai_7_ngay
     baseline: 0.70
-    mde: 0.06                     # đánh đổi đã chấp nhận (power 0,64 nếu tác động thật là 0,05)
+    mde: 0.06                     # đánh đổi đề xuất chấp nhận (power 0,64 nếu tác động thật là 0,05)
     alpha: 0.05
     power: 0.80
-    n_per_arm: 859
+    n_per_arm: 859                # cỡ mẫu hiệu dụng, không phải số yêu cầu thô
     design_effect: 6.96
     clusters_per_arm: 20
   identifiability:
     concurrent_control: "20 nhân viên đối chứng chạy song song cùng thời gian, cùng depot"
     spillover_risk: "Nhân viên cùng depot có thể trao đổi; giảm bằng phân quyền theo tài khoản và log staff_id"
-    predeclared: "Chốt trước chỉ số chính, ngưỡng dừng và ngày quyết định 2027-01-05 trước khi bắt đầu"
+    predeclared: "Chốt chỉ số, ngưỡng, seed, lịch và điều kiện đủ mẫu trước ngày 2026-12-15; quyết định dự kiến 2027-01-20 sau khi dữ liệu đủ theo dõi"
+  monitoring:
+    population: "Chỉ noi_dia + hang_nang; tách arm và bước rollout, cùng cửa sổ thời gian cho can thiệp và đối chứng; đếm request_id phân biệt. Không gộp mẫu 4/10 người vào phép đo tác động chính ở bước 20 người."
+    safety_absolute: "Áp dụng cả bước 4, 10 và 20 người. Hoàn trùng hoặc thông báo đã hoàn khi sổ cái không thành công được xử lý ngay; trần mở lại 6% được đánh giá hằng ngày trên cohort đã đủ 7 ngày theo dõi."
+    safety_relative_min_treatment_staff: 10
+    safety_relative: "Chỉ áp dụng luật chênh >= 2 điểm phần trăm từ bước 10 người, đối chứng luôn 20 người; đánh giá hằng ngày trên cohort cùng thời gian đã đủ 7 ngày. Đây là giám sát an toàn, không phải kiểm định hiệu quả sớm."
+    variable_cps: "Tổng token, tool của mọi run và phút xem lại/làm lại đo thật nhân 2.000 đ/phút, chia số yêu cầu thành công trong cùng cohort; chưa cộng cố định. Chốt CPS tuần khi kết quả đã đủ theo dõi; không có việc thành công thì ghi vô hạn, chưa đủ kết quả thì giữ bước và không coi chi phí bằng 0."
+    variable_cps_limit_vnd: 8000
+    fixed_cost: "Theo dõi riêng 40 triệu đ/tháng và CPS cộng cố định theo khối lượng thực tế trong E2; vượt 8.000 đ chỉ do phân bổ cố định không kích hoạt luật CPS biến đổi. PM đánh giá ngân sách và hợp đồng trước khi mở rộng."
+    adoption: "Số yêu cầu có quyết định sửa hoặc bỏ / số yêu cầu có quyết định xem lại, trong tuần; không có lượt xem lại thì ghi chưa có dữ liệu và chưa tăng bước."
   stop_rules:
-    - "NẾU mở lại 7 ngày của nhóm trợ lý cao hơn đối chứng >= 2 điểm hoặc vượt 6%, hoặc có >= 1 ca hoàn trùng TRONG 3 ngày liên tiếp THÌ Giám đốc vận hành tắt cờ trợ lý trong 30 phút KHÔNG THÌ không được sang bước rollout tiếp"
-    - "NẾU chi phí mỗi việc thành công > 8.000 đ TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp phạm vi về noi_dia và giới hạn tối đa 2 lần chạy (6.901.220 đ cả hệ thống, simulated) KHÔNG THÌ không được mở rộng sang hang_nang"
+    - "NẾU phát hiện >= 1 ca hoàn trùng hoặc >= 1 thông báo đã hoàn khi giao dịch sổ cái không thành công TRONG bất kỳ bước rollout nào THÌ Giám đốc vận hành tắt cờ trợ lý trong 30 phút, đối soát và chuyển nhân viên xử lý KHÔNG THÌ không được tiếp tục tự động hoàn tiền"
+    - "NẾU tỉ lệ mở lại 7 ngày của nhóm trợ lý vượt 6% TRONG một lần đánh giá hằng ngày trên cohort đã đủ 7 ngày ở bất kỳ bước rollout nào THÌ Giám đốc vận hành tắt cờ trợ lý trong 30 phút KHÔNG THÌ không được sang bước rollout tiếp"
+    - "NẾU đang ở bước ít nhất 10 người dùng trợ lý và tỉ lệ mở lại cao hơn đối chứng >= 2 điểm phần trăm TRONG 3 lần đánh giá hằng ngày liên tiếp trên cohort cùng thời gian đã đủ 7 ngày THÌ Giám đốc vận hành tắt cờ trợ lý trong 30 phút KHÔNG THÌ không được sang bước rollout tiếp"
+    - "NẾU CPS biến đổi (token + tool + xem lại + làm lại, chưa gồm chi phí cố định) > 8.000 đ TRONG 2 tuần liên tiếp đã đủ theo dõi THÌ PM trợ lý hoàn phí thu hẹp phạm vi về noi_dia và giới hạn tối đa 2 lần chạy KHÔNG THÌ không được mở rộng sang hang_nang"
     - "NẾU tỉ lệ bỏ qua gợi ý > 40% TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên trong 3 ngày KHÔNG THÌ không được chuyển bước rollout"
-  interim_looks: "chỉ kiểm tra chỉ số an toàn"
+  interim_looks: "Theo dõi sự cố hoàn tiền ngay khi xảy ra, tỉ lệ mở lại hằng ngày và chi phí/mức sử dụng hằng tuần. Chênh +2 điểm chỉ xét từ 10 người; chỉ số chính chỉ phân tích sau bước 20 người đủ mẫu và theo dõi, không kiểm định sớm. Chưa đủ dữ liệu an toàn thì giữ bước hiện tại và lùi lịch tương ứng."
   rollback: "Giám đốc vận hành bấm cờ tắt, hiệu lực trong 30 phút; khách được phục vụ bằng luồng nhân viên tự làm"
-  decision_date: "2027-01-05"
+  decision_date: "2027-01-20"
   simulated_inputs:
     - "cps_noi_dia_2696_simulated"
     - "cps_hang_nang_8221_simulated"
     - "cps_quoc_te_22515_simulated"
     - "cps_doi_tac_10215_simulated"
-    - "tong_he_thong_2_lan_6901220_simulated"
+    - "phut_xem_lai_simulated"
+    - "phut_lam_lai_simulated"
+    - "bang_gia_token_tool_luong_baseline_va_co_dinh_la_gia_dinh_lab"
